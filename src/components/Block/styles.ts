@@ -10,6 +10,6 @@ export const Container = styled("div")`
 `;
 
 export const TextWrapper = styled("div")`
-  border-radius: 3rem;
+  border-radius: 15px;
   max-width: 400px;
 `;

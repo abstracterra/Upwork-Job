@@ -28,7 +28,7 @@ export const ServiceWrapper = styled("div")`
   max-width: 100%;
 `;
 
-export const MinTitle = styled("h6")`
+export const MinTitle = styled("h1")`
   font-size: 15px;
   line-height: 1rem;
   padding: 0.5rem 0;

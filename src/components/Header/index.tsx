@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation } from "react-i18next";
-import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
 import {
@@ -15,8 +14,42 @@ import {
   Outline,
   Span,
 } from "./styles";
+import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
+import SolanaButton from "../SolanaButton";
+
+
+import { lazy } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import * as anchor from "@project-serum/anchor";
+import { Component} from 'react';
+//UI Imports
+
+
+import { clusterApiUrl } from "@solana/web3.js";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import {
+  getPhantomWallet,
+  getSlopeWallet,
+  getSolflareWallet,
+  getSolletWallet,
+  getSolletExtensionWallet,
+} from "@solana/wallet-adapter-wallets";
+
+
+import { createTheme, ThemeProvider } from "@material-ui/core";
+
+
+const Contact = lazy(() => import("../../components/ContactForm"));
+const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
+const Container = lazy(() => import("../../common/Container"));
+const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
+const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 const Header = ({ t }: any) => {
+
+
   const [visible, setVisibility] = useState(false);
 
   const showDrawer = () => {
@@ -37,22 +70,11 @@ const Header = ({ t }: any) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
-        </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
+          <Span>{t("Twitter")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
-          <Span>
-            <Button>{t("Contact")}</Button>
-          </Span>
+          <Span>{t("Discord")}</Span>
         </CustomNavLinkSmall>
       </>
     );

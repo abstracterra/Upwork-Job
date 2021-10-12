@@ -38,7 +38,7 @@ export const ContactWrapper = styled("div")<any>`
   width: ${(p) => (p.width ? "100%" : "110px")};
   font-weight: 700;
   text-align: center;
-  border-radius: 1.25rem;
+  border-radius: 15px;
   display: inline-block;
 `;
 
@@ -68,7 +68,7 @@ export const Menu = styled("h5")`
 
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1.2rem;
-  color: #18216d;
+  color: #000000;
   transition: color 0.2s ease-in;
   margin: 0.5rem 2rem;
 
@@ -84,6 +84,7 @@ export const Label = styled("span")`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  
 `;
 
 export const Outline = styled(MenuOutlined)<any>`
@@ -93,7 +94,7 @@ export const Outline = styled(MenuOutlined)<any>`
 export const Span = styled("span")`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
+  text-transform: lowercase;
   &:hover,
   &:active,
   &:focus {

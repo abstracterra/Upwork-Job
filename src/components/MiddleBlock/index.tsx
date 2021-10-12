@@ -33,6 +33,15 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
               )}
             </Col>
           </ContentWrapper>
+          
+        </Row>
+        <Row>
+        <main>
+            <section className="cards">
+              <div className="card charizard animated"></div>
+
+            </section>
+          </main>
         </Row>
       </Slide>
     </MiddleBlockSection>
